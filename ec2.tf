@@ -14,6 +14,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
 
   user_data_base64 = base64encode(file("user-data.sh"))
 
+  wait_for_fulfillment = true
   tags = {
     Name    = "CheapWorkerBar"
     Version = "0.0.1"
